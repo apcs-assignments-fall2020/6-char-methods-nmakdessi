@@ -6,11 +6,11 @@ public class MyMain {
     // If the char is not an uppercase letter, 
     // it is returned unchanged. 
     public static char toLower(char ch) {
-        if(ch >= 'a' && ch <= 'z'){
-            return ch;
+        if(ch >= 'A' && ch <= 'Z'){
+            return (char) (ch + 32);
         }
         else{
-            return (char) (ch + 32);
+            return ch;
         }
     }
 
@@ -28,11 +28,11 @@ public class MyMain {
     // If the char is not an lowercase letter, 
     // it is returned unchanged. 
     public static char toUpper(char ch) {
-        if(ch >= 97 && ch <= 122){
-            return ch;
+        if(ch >= 'a' && ch <= 'z'){
+            return (char) (ch - 32);
         }
         else{
-            return (char) (ch - 32);
+            return ch;
         }
     }
 
@@ -41,7 +41,7 @@ public class MyMain {
     public static String myToUpperCase(String str) {
         String upper = "";
         for(int i = 0; i < str.length(); i++){
-            upper += toLower(str.charAt(i));
+            upper += toUpper(str.charAt(i));
         }
         return upper;
     }
